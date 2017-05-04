@@ -1,17 +1,17 @@
 # air-pollution-notifier (空气污染提醒)
 
-1. 安装
-```
+## 安装
+```shell
 $ git clone https://github.com/cyio/air-pollution-notifier
 $ npm install / yarn
 ```
-2. 配置
+## 配置
 复制配置模板
-```
+```shell
 $ cp config.json.template config.json
 ```
 编辑配置
-```
+```json
 {
   "stationCode": "1012A",  // [全国空气监测点列表](http://beijingair.sinaapp.com/china_sites.html)
   "serverChanKey": "",  // 使用 [Server酱](http://sc.ftqq.com/3.version) 支持微信接受消息
