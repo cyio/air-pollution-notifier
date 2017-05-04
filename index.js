@@ -5,8 +5,6 @@ const pm25 = require('pm25in'),
  schedule = require('node-schedule'),
  config = require('./config.json');
 
-let debug = 0
-
 pm25.token = config.pm25InKey
 time.tzset("Asia/Shanghai");
 const now = new time.Date()
@@ -22,11 +20,6 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 const app = {
   init() {
     this.checkAQI() // 立刻运行一次
-
-    if (debug) {
-      setInterval(this.checkAQI, 1000*60)
-    }
-
     this.watcher()
   },
   checkAQI() {
@@ -44,15 +37,14 @@ const app = {
     });
   },
   severChan(text, desp) {
-    return axios.post(`http://sc.ftqq.com/${config.key}.send`,
+    return axios.post(`http://sc.ftqq.com/${config.serverChanKey}.send`,
       querystring.stringify({
         text: text,
         desp: desp
       }))
       .then((response) => {
-        if (response.status < 400) {
-          console.log('serverChan: send success')
-        }
+        if (response.status === 200) return console.log('serverChan: send success')
+        console.warn(response.status)
       })
       .catch((error) => {
         console.error(error);
