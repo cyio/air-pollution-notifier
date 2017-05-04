@@ -1,0 +1,19 @@
+{
+  "name": "air-pollution-notifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "axios": "^0.13.0",
+    "node-schedule": "^1.1.1",
+    "pm25in": "0.0.4",
+    "time": "^0.11.4"
+  }
+}

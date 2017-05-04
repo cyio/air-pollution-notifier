@@ -1,0 +1,15 @@
+{
+  "stationCode": "1012A",
+  "serverChanKey": "",
+  "pm25InKey": "",
+  "scheduleTime": {
+    "days": [0, 1, 2, 3, 4, 5, 6],
+    "hours": [8, 18, 21],
+    "minutes": [20]
+  },
+  "conditions": {
+    "aqi": 150,
+    "pm25": 1000,
+    "o3": 160
+  }
+}
