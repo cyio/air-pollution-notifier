@@ -21,6 +21,9 @@ const app = {
   init() {
     this.checkAQI() // 立刻运行一次
     this.watcher()
+    pm25.city_stations({city: 'beijing'}, (err, data) => {
+      console.log(data)
+    })
   },
   checkAQI() {
     pm25.station_aqi({station_code: config.stationCode}, (err, data) => {
